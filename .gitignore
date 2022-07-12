@@ -1,1 +1,4 @@
-output-flatcar
+output-flatcar/
+builds/.vagrant/
+builds/*.box
+ignition.json
