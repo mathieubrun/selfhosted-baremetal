@@ -1,3 +1,17 @@
+variant: flatcar
+version: 3.0.0
+storage:
+  luks:
+    - name: data
+      device: /dev/disk/by-partlabel/USR-B
+      keyfile:
+        source: http://192.168.1.10:8000/luks
+  filesystems:
+    - path: /var/lib/data
+      device: /dev/disk/by-id/dm-name-data
+      format: ext4
+      label: DATA
+      with_mount_unit: true
 passwd:
   users:
     - name: core
